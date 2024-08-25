@@ -1,0 +1,13 @@
+# RViz configuration to visualize the filtered and removed point clouds
+
+Visualization Manager:
+  Global Options:
+    Fixed Frame: "base_link" # or the appropriate frame
+  Displays:
+    - Class: rviz/PointCloud2
+      Name: "Filtered Points"
+      Topic: "filtered_points"
+    - Class: rviz/PointCloud2
+      Name: "Removed Points"
+      Topic: "removed_points"
+

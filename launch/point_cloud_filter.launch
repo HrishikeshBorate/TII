@@ -1,0 +1,11 @@
+<launch>
+    <!-- Launch the ROS bag playback -->
+    <node pkg="rosbag" type="play" name="rosbag_play" args="/catkin_ws/LiDARFilteringAssignment.bag"/>
+
+    <!-- Launch the point cloud filtering node -->
+    <node pkg="point_cloud_filter" type="point_cloud_filter_node" name="point_cloud_filter_node" output="screen"/>
+
+    <!-- RViz for visualization -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find point_cloud_filter)/rviz/point_cloud_filter.rviz"/>
+</launch>
+
